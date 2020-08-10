@@ -9,7 +9,7 @@ import {actionCreate, actionEdit} from "../redux/actions/trainingsApiActions";
 import styled from "styled-components";
 import {State, Training} from "../types";
 
-const types = [
+export const types = [
     'running',
     'bicycle',
     'ski',
@@ -82,7 +82,7 @@ const Form = ({edit, _id, close}: { edit?: boolean, _id?: string, close?: Functi
                         defaultValue={(edit && initialState?.type) ? initialState.type : 'running'}
                     >
                         {types.map(type =>
-                            <Button color="warning" active={activeType === type} onClick={() => setValue('type', type)}>
+                            <Button outline color="warning" active={activeType === type} onClick={() => setValue('type', type)}>
                                 <Icon pointer size='20px' src={icons[type]}/>
                             </Button>
                         )}
@@ -124,9 +124,9 @@ const Form = ({edit, _id, close}: { edit?: boolean, _id?: string, close?: Functi
                                 defaultValue='m'
                                 addonType="append"
                             >
-                                <Button color="warning" active={activeDistanceType === 'm'}
+                                <Button outline color="warning" active={activeDistanceType === 'm'}
                                         onClick={() => setValue('distanceType', 'm')}>m</Button>
-                                <Button color="warning" active={activeDistanceType === 'km'}
+                                <Button outline color="warning" active={activeDistanceType === 'km'}
                                         onClick={() => setValue('distanceType', 'km')}>km</Button>
                             </Controller>
                             <FormFeedback>

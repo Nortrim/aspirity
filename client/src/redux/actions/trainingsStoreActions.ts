@@ -8,8 +8,20 @@ export const types = {
     SET_DATA: `${ENTITY} SET_DATA`,
     DELETE_ITEM: `${ENTITY} DELETE_ITEM`,
     SET_ITEM: `${ENTITY} SET_ITEM`,
-    SET_EDIT: `${ENTITY} SET_EDIT`
+    SET_EDIT: `${ENTITY} SET_EDIT`,
+    FILTER_BY_TYPE: `${ENTITY} FILTER_BY_TYPE`,
+    SORT_BY: `${ENTITY} SORT_BY`
 };
+
+export const filterByType = (payload: string | null) => ({
+    type: types.FILTER_BY_TYPE,
+    payload
+});
+
+export const sortBy = (payload: string) => ({
+    type: types.SORT_BY,
+    payload
+});
 
 export const setItem = (newItem: Training) => ({
     type: types.SET_ITEM,

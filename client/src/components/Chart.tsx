@@ -2,11 +2,12 @@ import React, {Fragment} from "react";
 import {AreaChart, XAxis, YAxis, Tooltip, Area, ResponsiveContainer} from "recharts";
 import {useSelector} from "react-redux";
 import moment from 'moment'
-import {State, Training} from "../types";
+import { Training} from "../types";
+import {getTrainings} from "../redux/reducers/trainingsReducer";
 
 
 const Chart = () => {
-    let data: Training[] = Object.assign([], useSelector((state: State): Training[] => state.trainingsReducer.data));
+    let data: Training[] = Object.assign([], useSelector(getTrainings));
     data.sort((a,b)=> a.date > b.date ? 1 : a.date < b.date ? -1 : 0);
 
     let formattedData = [];

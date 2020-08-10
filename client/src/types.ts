@@ -11,6 +11,10 @@ export type Training = {
 
 export type State = {
     trainingsReducer: {
+        filters: {
+            filterByType: string | null,
+            sortBy: string
+        }
         data: Training[]
     }
 }
